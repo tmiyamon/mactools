@@ -1,5 +1,17 @@
+# Install Google chrome
+open "http://www.google.co.jp/intl/ja/chrome/browser/" && read
+
+# Install Alfred
+open 'http://www.alfredapp.com/' && read
+
+# Install senebier
+open 'http://www.bicoid.com/app/senebier/index.html' && read
+
+# Install spectacls
+open 'http://spectacleapp.com/' && read
+
 # Install XCode
-echo 'visit https://developer.apple.com/downloads/index.action' && read
+open 'https://developer.apple.com/downloads/index.action' && read
 
 # Install homebrew
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)" 
@@ -44,7 +56,9 @@ mkdir ${HOME}/bin
 for CMD in sed xargs find ; do ln -s $(which g${CMD}) ${HOME}/bin/${CMD}; done
 
 # Set path
-path=($HOME/bin $(/usr/local/bin/brew –prefix coreutils)/libexec/gnubin $path)
+echo 'path=($HOME/bin $(/usr/local/bin/brew –prefix coreutils)/libexec/gnubin $path)' >> ${HOME}/.zshenv
 
+# Alias to chrome
+echo 'alias chrome="open -a /Applications/Google\ Chrome.app"' >> ${HOME}/.zshrc
 
 
